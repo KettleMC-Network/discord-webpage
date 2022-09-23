@@ -32,6 +32,10 @@ html {
   color: #33cc33;
 }
 
+.yellow {
+  color: #cccc00;
+}
+
 .bg-base {
   background-color: #1a2634 !important;
 }
