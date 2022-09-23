@@ -8,9 +8,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Bot - a Discord Bot</title>
+    <title>KettleMC - Modpack Network</title>
     <link rel="stylesheet" href="assets/css/bulma.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -25,6 +26,7 @@
     />
 
     <script src="assets/js/jquery-3.6.0.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
   </head>
   <body>
     <!-- Back To Top Start -->
@@ -40,8 +42,8 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand mt-2 mb-2">
-        <a class="navbar-item" href="#">
-          <strong>Your Bot</strong>
+        <a class="navbar-item">
+          <i class="fa-solid fa-cauldron"></i> <strong>KettleMC.net</strong>
 
           <!-- or if you want to use image -->
           <!-- <img
@@ -66,21 +68,22 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
+		
           <a href="#" class="navbar-item is-tab">
-            Home
+            <i class="fa-solid fa-house"></i>&nbsp Home
           </a>
 
           <a href="#features" class="navbar-item is-tab">
-            Features
+            <i class="fa-solid fa-gear"></i>&nbsp Modpacks
           </a>
 
           <a href="#stats" class="navbar-item is-tab">
-            Stats
+            <i class="fa-solid fa-tag"></i>&nbsp Stats
           </a>
 
-          <a href="#" class="navbar-item is-tab">
+          <!--<a href="#" class="navbar-item is-tab">
             Docs
-          </a>
+          </a>-->
         </div>
 
         <div class="navbar-end">
@@ -88,11 +91,20 @@
             <i class="fa-brands fa-discord"></i>
           </a>
 
-          <a href="#" class="navbar-item is-tab" target="_blank">
+          <a href="https://github.com/KettleMC-Network/" class="navbar-item is-tab" target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
 
-          <div class="navbar-item">
+          <a href="https://www.curseforge.com/members/kettlemc_net/projects" class="navbar-item is-tab" target="_blank">
+            <i class="fa-solid fa-hammer"></i>
+          </a>
+
+          <a href="https://twitter.com/KettleMC" class="navbar-item is-tab" target="_blank">
+            <i class="fa-brands fa-twitter"></i> 
+          </a>
+
+          <!--
+		  <div class="navbar-item">
             <div class="buttons">
               <a href="#" class="button is-blurple">
                 <strong
@@ -102,6 +114,7 @@
               </a>
             </div>
           </div>
+		  -->
         </div>
       </div>
     </nav>
@@ -114,34 +127,45 @@
           <div class="columns">
             <div class="column mr-6 mt-12" data-aos="fade-up">
               <p class="title has-text-white has-text-weight-bold">
-                Time to add [your bot] to your server.
+                KettleMC.net - Dein Modpack Netzwerk!
               </p>
               <p class="subtitle has-text-grey-light is-size-6 mt-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                KettleMC.net ist ein deutsches Modpack Netwerk mit vielen verschiedenen bekannten aber auch eigenen <b>Modpacks</b>!
+				Wir bieten eigene Systeme, <b>selbstgeschriebene Mods</b>, viele Bugfixes und ein angenehmes Spielgefühl.
+				</br>
+				</br>
+				<b>Aber überzeug dich doch einfach selbst :)</b>
               </p>
+			  
               <div class="buttons">
-                <a href="#" class="button is-info">
-                  <strong>Add To Discord</strong>
+
+                <a onclick="copyIp()" class="button is-info blue">
+                  <strong><i class="fa-solid fa-server"></i> Adresse kopieren</strong>
+                </a>
+				
+                <a href="https://discord.gg/f9P9HEj" class="button is-info">
+                   <strong><i class="fa-brands fa-discord"></i> Discord</strong>
                 </a>
 
-                <a href="#" class="button is-primary is-outlined">
-                  <strong><i class="fa-solid fa-crown"></i> Premium</strong>
+				<!--
+                <a href="https://twitter.com/KettleMC" class="button is-info twitter">
+                  <strong><i class="fa-brands fa-twitter"></i> Twitter</strong>
                 </a>
+				-->
               </div>
             </div>
             <div class="column mt-6" data-aos="fade-left">
               <img
                 class="image has-image-centered vert-move mt-4"
-                src="assets/img/relaunch_day.svg"
+                src="assets/img/kettlemc.png"
                 alt="hero image"
-                style="width: 20rem;"
+                style="width: 50rem;"
               />
             </div>
           </div>
         </div>
       </div>
-      <div class="has-text-centered" data-tippy-content="Scroll Down">
+      <div class="has-text-centered" data-tippy-content="Weitere Infos">
         <a href="#features"
           ><i
             class="fa-solid fa-circle-chevron-down fa-lg vert-move2 has-text-white"
@@ -164,7 +188,7 @@
     <!-- Features Section Start -->
     <section id="features" class="section mt-6">
       <div class="has-text-centered">
-        <h1 class="title lined">Features</h1>
+        <h1 class="title lined">Modpacks</h1>
         <div class="line line-center blurple"></div>
       </div>
 
@@ -182,18 +206,19 @@
 
         <div class="columns mt-6">
           <div class="column mr-6">
-            <h4 class="title">Feature <span class="blurple">#1</span></h4>
+            <h4 class="title">JET <span class="red">(1.7.10)</span></h4>
             <p class="subtitle mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Mit diesem Modpack kannst du Waffen, Helikopter, Flugzeuge und Jets herstellen.
+			  Errichte riesige Militärbasen mit Mods wie Chisel und Malisis Doors und bekämpfe deine Feinde mit MCHeli oder Modern Warfare bis zum Tod. 
+			  Auch für passive Spieler gibt es die Möglichkeit, Waffen in einer Fabrik zu produzieren und an die kämpfenden Parteien zu verkaufen.
+			  </br>
+			  Worauf wartest du? Stürze dich in den Kampf!
             </p>
           </div>
           <div class="column" data-aos="fade-left">
             <img
               class="image has-image-centered"
-              src="assets/img/features_overview.svg"
+              src="assets/img/jet-rocket.svg"
               alt="feature1 img"
               style="width: 20rem;"
             />
@@ -218,20 +243,20 @@
           <div class="column" data-aos="fade-right">
             <img
               class="image has-image-centered"
-              src="assets/img/product_literation.svg"
+              src="assets/img/harvestblock-flower.svg"
               alt="feature1 img"
               style="width: 20rem;"
             />
           </div>
           <div class="column">
             <h4 class="title">
-              Feature <span class="has-text-primary">#2</span>
+              HarvestBlock <span class="green">(1.12.2)</span>
             </h4>
             <p class="subtitle mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              HarvestBlock ist ein SkyBlock Modpack basierend auf Farming Mods. 
+			  Um im Pack weiterzukommen, muss man Samen sammeln, Planzen züchten, verbessern und weiterentwickeln. 
+			  Im weiteren Verlauf des Modpacks beschäftigt man sich mit verschiedenen Magie und Technik Mods wie Botanie, Roots und Applied Enegergistics, um beispielsweise Lagersysteme aufzubauen und die späteren Creative-Items zu erhalten. 
+			  Das Modpack besitzt ein großes Quest System, das einen durch das ganze Spiel begleitet.
             </p>
           </div>
         </div>
@@ -253,19 +278,17 @@
         <div class="columns mt-6">
           <div class="column mr-6">
             <h4 class="title">
-              Feature <span class="has-text-warning">#3</span>
+              Tekkit II <span class="orange">(1.12.2)</span>
             </h4>
             <p class="subtitle mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Tekkit ist zurück! Das klassische Tekkit Modpack mit vielen der originalen Mods wurde erneut zum Leben erweckt. 
+			  Mit altem Charme und neuen Möglichkeiten gibt es für jeden Technik-Fan neue Herausforderungen!
             </p>
           </div>
           <div class="column" data-aos="fade-left">
             <img
               class="image has-image-centered"
-              src="assets/img/feeling_happy.svg"
+              src="assets/img/tekkit.svg"
               alt="feature1 img"
               style="width: 20rem;"
             />
@@ -290,18 +313,15 @@
           <div class="column" data-aos="fade-right">
             <img
               class="image has-image-centered"
-              src="assets/img/music.svg"
+              src="assets/img/hexxit.svg"
               alt="feature1 img"
               style="width: 20rem;"
             />
           </div>
           <div class="column">
-            <h4 class="title">Feature <span class="has-text-info">#4</span></h4>
+            <h4 class="title">Hexxit <span class="purple">(1.12.2)</span></h4>
             <p class="subtitle mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Hexxit ist zurück! Spiele das klassische 1.5 Adventure Modpack in einer modernen Minecraft Version. Erkunde Dungeons, verbessere dein Equipment und besuche andere Dimensionen, um immer stärker zu werden.
             </p>
           </div>
         </div>
@@ -319,18 +339,21 @@
 
       <div class="columns mt-6">
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-server"></i> Servers</span>
+          <p class="title has-text-weight-bold lined">
+			<span data-playercounter-ip="KettleMC.net">0</span>
+		  
+		  </p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Momentane Spieler</span>
         </div>
 
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-terminal"></i> Commands</span>
+          <p class="title has-text-weight-bold lined">∞</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-traffic-cone"></i> Bald verfügbar!</span>
         </div>
 
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">000</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Users</span>
+          <p class="title has-text-weight-bold lined">∞</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-traffic-cone"></i> Bald Verfügbar!</span>
         </div>
       </div>
     </section>
@@ -341,14 +364,15 @@
       <div class="columns">
         <div class="column has-text-left">
           <p class="title has-text-weight-bold">
-            Ready to try <span class="blurple">[your bot]</span>?
+            Bist du <span class="blurple">überzeugt</span>?
           </p>
           <p class="subtitle mt-3 has-text-gray">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Dann tritt noch heute unserer Community bei!
+			</br>
+			Wir freuen uns auf dich!
           </p>
           <a href="#" class="button is-blurple is-medium"
-            ><strong><i class="fa-solid fa-book"></i> Get Started</strong></a
+            ><strong><i class="fa-solid fa-book"></i> Los geht's!</strong></a
           >
         </div>
 
@@ -361,20 +385,21 @@
     <footer class="footer bg-base">
       <div class="content has-text-centered has-text-white">
         <div class="mb-2">
-          <a href="#" class="has-text-white" target="_blank">
+          <!--
+		  <a href="#" class="has-text-white" target="_blank">
             <i class="fa-brands fa-discord"></i>
           </a>
           &nbsp; &nbsp;
           <a href="#" class="has-text-white" target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
+		  -->
         </div>
 
         <p>
-          <span class="has-text-weight-bold">[Your Bot]</span>
+          <span class="has-text-weight-bold">KettleMC.net</span>
           <br />
-          &copy; <span id="cp-year"></span> Copyright [Bot Owner]. All Rights
-          Reserved.
+          &copy; <span id="cp-year"></span> Copyright KettleMC Network. All Rights Reserved.
         </p>
 
         <p style="letter-spacing: 0.1em;" class="is-uppercase">
@@ -394,5 +419,12 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="assets/js/script.js"></script>
+	<script>
+		function copyIp(){
+		   navigator.clipboard.writeText("kettlemc.net").then(() => {
+		   });
+	  
+		}
+    </script> 
   </body>
 </html>

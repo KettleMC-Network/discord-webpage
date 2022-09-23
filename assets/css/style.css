@@ -12,10 +12,30 @@ html {
   color: #7289da;
 }
 
+.red {
+  color: #ff0000;
+}
+
+.orange {
+  color: #ff9900;
+}
+
+.purple {
+  color: #cc00cc;
+}
+
+.lightblue {
+  color: #3399ff;
+}
+
+.green {
+  color: #33cc33;
+}
+
 .bg-base {
   background-color: #1a2634 !important;
 }
-
+cc00cc
 #backtotop {
   display: inline-block;
   background-color: #7289da;
