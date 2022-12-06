@@ -26,7 +26,6 @@
     />
 
     <script src="assets/js/jquery-3.6.0.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
   </head>
   <body>
     <!-- Back To Top Start -->
@@ -345,21 +344,18 @@
 
       <div class="columns mt-6">
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">
-			<span data-playercounter-ip="KettleMC.net">0</span>
-		  
-		  </p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Momentane Spieler</span>
+          <p id="currentPlayers" class="title has-text-weight-bold lined">∞</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i>Momentane Spieler</span>
         </div>
 
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">∞</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-traffic-cone"></i> Bald verfügbar!</span>
+          <p id="totalPlayers" class="title has-text-weight-bold lined">∞</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i>Gesamte Spieler</span>
         </div>
 
         <div class="column has-text-centered">
-          <p class="title has-text-weight-bold lined">∞</p>
-          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-traffic-cone"></i> Bald Verfügbar!</span>
+          <p id="peakPlayers" class="title has-text-weight-bold lined">∞</p>
+          <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i>Maximale Spieler (Letzte 48h)</span>
         </div>
       </div>
     </section>
