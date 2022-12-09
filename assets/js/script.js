@@ -68,5 +68,15 @@ btn.on("click", function (e) {
   $("html, body").animate({ scrollTop: 0 }, "300");
 });
 
+// cloudy stats
+$.ajax({
+  url: "https://cloudy.kettlemc.net/api/stats/players",
+  success: function(data){
+    $("#currentPlayers").text(data.playersOnline);
+    $("#totalPlayers").text(data.playersTotal);
+    $("#peakPlayers").text(data.players48hPeak);
+  }
+});
+
 // copyright year
 document.getElementById("cp-year").innerHTML = new Date().getFullYear()
