@@ -75,6 +75,58 @@ $.ajax({
     $("#currentPlayers").text(data.playersOnline);
     $("#totalPlayers").text(data.playersTotal);
     $("#peakPlayers").text(data.players48hPeak);
+	var playTimeYears = (data.totalAccumulatedPlayTime / (1000 * 60 * 60 * 24 * 365));
+    $("#playtime").text(Math.round((playTimeYears + Number.EPSILON) * 100) / 100);
+  }
+});
+
+$.ajax({
+  url: "https://kettlemc.net/assets/members.json",
+  success: function(jsonData){
+    var teamSection = document.getElementById("team");
+    var teamRowDiv;
+    for (var i = 0; i < jsonData.length; i++) {
+      
+      if (i % 4 == 0) {
+        teamRowDiv = document.createElement("div")
+        teamRowDiv.classList.add("columns", "mt-6")
+      }
+      
+      var entry = jsonData[i];
+
+      var teamMemberDiv = document.createElement("div")
+      teamMemberDiv.classList.add("column")
+      teamMemberDiv.classList.add("has-text-centered")
+
+      var img = document.createElement("img");
+      img.src = "https://minotar.net/helm/" + entry.uuid + "/128";
+      img.alt = entry.description;
+
+      var spanFormat = document.createElement("span");
+      var spanRank = document.createElement("span");
+      spanRank.innerText = entry.rank + (entry.rank == "" ? "" : " ");
+      var name = document.createElement("text");
+      name.innerText = entry.name;
+	  spanFormat.classList.add("subtitle");
+      spanFormat.classList.add("has-text-weight-bold");
+      spanRank.classList.add(entry.color);
+
+      spanFormat.appendChild(spanRank);
+      spanFormat.appendChild(name);
+
+      
+      var descriptionP = document.createElement("p");
+      descriptionP.innerText = entry.description
+
+      var displayName = document.createElement("p")
+      displayName.appendChild(spanFormat);
+
+      teamMemberDiv.appendChild(img);
+      teamMemberDiv.appendChild(displayName);
+      teamMemberDiv.appendChild(descriptionP);
+      teamRowDiv.appendChild(teamMemberDiv);
+      teamSection.appendChild(teamRowDiv);
+	}
   }
 });
 
